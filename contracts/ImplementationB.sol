@@ -4,7 +4,8 @@ pragma solidity ^0.8.10;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 import "./Proxiable.sol";
 
-contract ImplementationA is Proxiable, ERC20("Classwork", "CLW")  {
+contract ImplementationB is Proxiable, ERC20("Classwork", "CLW")  {
+    //ImplementationB Contract Address: 0x7Ac60403C149839938e63d7514A1555c2A83d7d5
     address public owner;
 
     
@@ -28,7 +29,7 @@ contract ImplementationA is Proxiable, ERC20("Classwork", "CLW")  {
         _transfer(address(this), to , amount );
     }
 
-    function mint(address to) public{
+    function burn(address to) public{
         uint burnable = (totalSupply() * 1) / (totalSupply() * 10000);
         _burn(to, burnable);
     }
